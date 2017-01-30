@@ -5,7 +5,7 @@ $(document).ready(function () {
 
 	var test = $.ajax({
 		type: "GET",
-		url: "http://localhost:3200/api/test"
+		url: "http://localhost:3000/api/test"
 	});
 
 	test.done(function(data) {
