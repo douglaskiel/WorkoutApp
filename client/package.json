@@ -4,7 +4,8 @@
   "description": "This is an app for working out.",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "node ./node_modules/http-server/bin/http-server"
   },
   "repository": {
     "type": "git",
