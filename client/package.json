@@ -1,3 +1,4 @@
+// This allows us to start and stop connection with the client server
 {
   "name": "client",
   "version": "1.0.0",

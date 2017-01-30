@@ -1,3 +1,4 @@
+// this opens and closes the connection to node
 {
  "name": "workoutlogserver",
  "version": "1.0.0",
