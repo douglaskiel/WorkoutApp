@@ -1,0 +1,24 @@
+{
+  "name": "client",
+  "description": "This is an app for working out.",
+  "main": "index.js",
+  "authors": [
+    "Douglas Kiel"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "workout"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "bootstrap": "^3.3.7"
+  }
+}
