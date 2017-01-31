@@ -1,34 +1,15 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-var Sequelize = require('sequelize');
-
-var sequelize = new Sequelize('workoutlog', 'postgres', '00sGbp4trctir', {
-	host: 'localhost',
-	dialect: 'postgres'
-});
-
-sequelize.authenticate().then(
-	function() {
-		console.log('connected to workoutlog postgres db');
-	},
-	function(err){
-		console.log(err);
-	}
-);
-
-// build a user model in sqllize
-var User = sequelize.define('user', {
-	username: Sequelize.STRING,
-	passwordhash: Sequelize.STRING,
-});
+var sequelize = require('./db');
+var User = sequelize.import('./models/user');
 
 //creates the table in postgres
 //matches the model we defined
 //Doesn't drop the db
-User.sync(); 
+User.sync(); // sync({ force: true }); drops the table compeletely! (line 27ish); 
+// only use this when you need to drop and entire table
 // DANGER!! If below is uncommented then it will break completely
-// User({ force: true }); //drops the table compeletely (line 27ish) only use this when you need to drop and entire table
 
 app.use(bodyParser.json());
 
@@ -45,7 +26,7 @@ app.post('/api/user', function(req, res){
 }).then(
 		//Sequelize is going to return the object it created from db.
 		function createSuccess(user){
-			//successful get thsi:
+			//successful get this:
 			res.json({
 				user: user,
 				message: 'create'
