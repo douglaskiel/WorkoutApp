@@ -27,7 +27,8 @@ var User = sequelize.define('user', {
 //matches the model we defined
 //Doesn't drop the db
 User.sync(); 
-// User({ force: true }); //drops the table compeletly (line 27ish)
+// DANGER!! If below is uncommented then it will break completely
+// User({ force: true }); //drops the table compeletely (line 27ish) only use this when you need to drop and entire table
 
 app.use(bodyParser.json());
 
@@ -65,6 +66,10 @@ app.use('/api/test', function(req, res){
 app.listen(3000, function(){
 	console.log("app listening on port 3000");
 });
+
+
+
+
 // var express = require('express');
 // var app = express();
 // var bodyParser = require("body-parser");
