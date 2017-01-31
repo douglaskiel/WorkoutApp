@@ -3,7 +3,7 @@ var app = express();
 var bodyParser = require('body-parser');
 var Sequelize = require('sequelize');
 
-var sequelize = new Sequelize('workoutlog', 'postgres', 'Jsb59733', {
+var sequelize = new Sequelize('workoutlog', 'postgres', '00sGbp4trctir', {
 	host: 'localhost',
 	dialect: 'postgres'
 });
@@ -59,11 +59,11 @@ app.post('/api/user', function(req, res){
 app.use(require('./middleware/headers'));
 
 app.use('/api/test', function(req, res){
-	res.send("Hello World");
+	res.send("Hello Cambodia");
 });
 
 app.listen(3000, function(){
-	console.log("app is listening on port 3000");
+	console.log("app listening on port 3000");
 });
 // var express = require('express');
 // var app = express();
