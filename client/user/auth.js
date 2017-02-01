@@ -33,7 +33,7 @@ $(function () {
 					}).fail(function() {
 				$("#su_error").text("There was an issue with sign up").show();
 				});
-
+			}
 		// login method
 
 		// loginout method
