@@ -27,6 +27,7 @@ app.use('/api/user', require('./routes/user'));
 // login route
 app.use('/api/login', require('./routes/session'));
 app.use('/api/definition', require('./routes/definition'));
+app.use('/api/log', require('./routes/log'));
 
 app.listen(3000, function(){
 	console.log("app listening on port 3000");
