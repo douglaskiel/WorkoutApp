@@ -10,7 +10,7 @@ var User = sequelize.import('./models/user');
 //creates the table in postgres
 //matches the model we defined
 //Doesn't drop the db
-User.sync(); // sync({ force: true }); drops the table compeletely! (line 27ish); 
+sequelize.sync(); // sync({ force: true }); drops the table compeletely! (line 27ish); 
 // only use this when you need to drop and entire table
 // DANGER!! If below is uncommented then it will break completely
 
@@ -22,12 +22,11 @@ app.use(require('./middleware/validate-session'));
 app.use('/api/test', function(req, res){
 	res.send("Hello Cambodia");
 });
-
 // user route
 app.use('/api/user', require('./routes/user'));
-
 // login route
 app.use('/api/login', require('./routes/session'));
+app.use('/api/definition', require('./routes/definition'));
 
 app.listen(3000, function(){
 	console.log("app listening on port 3000");
