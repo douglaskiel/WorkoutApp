@@ -12,7 +12,7 @@
 </head>
 
 <body>
-	<div class="container">
+		<div class="container">
 			<ul class="nav nav-tabs">
 				<li><a href="#home" id="loginout" class="disabled" data-toggle="tab">Login</a></li>
 				<li class="active"><a href="#home" data-toggle="tab">Home</a></li>
@@ -38,6 +38,21 @@
 				
 			</div>
 		</div>
+
+		<!-- Definition -->
+		<div class="tab-pane" id="define">
+			<h2>Define</h2>
+				<label for="def-description">Description</label>
+				<textarea class="form-control" id="def-description" rows="3"></textarea>
+				<label for="def-logtype">Log work by</label>
+				<select class="form-control" id="def-logtype">
+					<option>Time</option>
+					<option>Weight</option>
+					<option>Reps</option>
+				</select>
+				<button id="def-save" class="btn btn-primary">Save</button>
+		</div>
+
 		<!-- Login -->
 		<div class="modal fade" id="login-modal" role="dialog">
 			<div class="modal-dialog">
@@ -66,7 +81,7 @@
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria_hidden="true">&time;</span></button>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria_hidden="true">&times;</span></button>
 						<h4 class="modal-title">Sign Up</h4>
 					</div>
 					<div class="modal-body">
@@ -83,7 +98,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
 
 	<!-- jQuery (necessary for Bootstrap's Javascript plugins) -->
 	<script src="./bower_components/jquery/dist/jquery.min.js"></script>
@@ -91,8 +105,10 @@
 	<script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<!-- This is the app.js link -->
 	<script src="./app.js"></script>
-
+	<!-- The auth.js link -->
 	<script src="./user/auth.js"></script>
+	<!-- define.js link -->
+	<script src="./workouts/define.js"></script>
 
 </body>
 

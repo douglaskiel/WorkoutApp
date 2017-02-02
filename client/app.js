@@ -1,7 +1,7 @@
 $(function() {
 	var WorkoutLog = (function($, undefined) {
 		var API_BASE = "http://localhost:3000/api/";
-		var userDefinitions = [];
+		var userDefinition = [];
 
 		var setAuthHeader = function(sessionToken) {
 			window.localStorage.setItem("sessionToken", sessionToken);
@@ -34,7 +34,7 @@ $(function() {
 	$('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
 		var target = $(e.target).attr("href"); // activated tab
 		if (target === "#log") {
-			WorkoutLog.log.setDefinitions();
+			WorkoutLog.log.setDefinition();
 		}
 
 		if (target === "#history") {
