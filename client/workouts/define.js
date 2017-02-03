@@ -18,8 +18,10 @@ $(function() {
 				});
 
 				define.done(function(data) {
-
 					WorkoutLog.definition.userDefinition.push(data.definition);
+					$("#def-description").val("");
+					$("#def-logtype").val("");
+					$('a[href="#log"]').tab('show');
 				});
 		   },
 

@@ -27,12 +27,20 @@ $(function () {
 					WorkoutLog.setAuthHeader(data.sessionToken);
 					WorkoutLog.definition.fetchAll();
 					WorkoutLog.log.fetchAll();
+
+					// remove after test
+					console.log("Success");
+					console.log(data);
 				}
 
 				$("#signup-modal").modal("hide");
 				$(".disabled").removeClass("disabled");
 				$("#loginout").text("Logout");
-				$('.nav-tabs a[href="#define"]').tab('show');
+				$("#su_username").val("");
+				$("#su_password").val("");
+				// routing
+				$('a[href="#define"]').tab('show');
+
 				})
 				.fail(function() {
 					$("#su_error").text("There was an issue with sign up").show();
@@ -69,6 +77,10 @@ $(function () {
 				$("#login-modal").modal("hide");
 				$(".disabled").removeClass("disabled");
 				$("#loginout").text("Logout");
+
+				$("#li_username").val("");
+				$("#li_password").val("");
+				$('a[href="#define"]').tab('show');
 				})
 				.fail(function() {
 					$("#li_error").text("There was an issue with login").show();
