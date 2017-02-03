@@ -23,15 +23,19 @@ $(function () {
 
 			// signup done/fail
 			signup.done(function(data) {
-				if(data.sessionToken) {
+				if (data.sessionToken) {
 					WorkoutLog.setAuthHeader(data.sessionToken);
+					WorkoutLog.definition.fetchAll();
+					WorkoutLog.log.fetchAll();
 				}
 
 				$("#signup-modal").modal("hide");
 				$(".disabled").removeClass("disabled");
 				$("#loginout").text("Logout");
-					}).fail(function() {
-				$("#su_error").text("There was an issue with sign up").show();
+				$('.nav-tabs a[href="#define"]').tab('show');
+				})
+				.fail(function() {
+					$("#su_error").text("There was an issue with sign up").show();
 				});
 			},
 		// login method
@@ -58,13 +62,16 @@ $(function () {
 			login.done(function(data) {
 				if (data.sessionToken) {
 					WorkoutLog.setAuthHeader(data.sessionToken);
+					WorkoutLog.definition.fetchAll();
+					WorkoutLog.log.fetchAll();
 				}
 
 				$("#login-modal").modal("hide");
 				$(".disabled").removeClass("disabled");
 				$("#loginout").text("Logout");
-					}).fail(function() {
-				$("#li_error").text("There was an issue with login").show();
+				})
+				.fail(function() {
+					$("#li_error").text("There was an issue with login").show();
 				});
 
 		},
