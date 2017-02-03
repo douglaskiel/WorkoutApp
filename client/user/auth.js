@@ -6,13 +6,7 @@ $(function () {
 			var username = $("#su_username").val();
 			var password = $("#su_password").val();
 			// user object
-			var user = {
-				user: {
-					username: username,
-					password: password
-				}
-			};
-
+			var user = {user: {username: username, password: password }};
 			// signup post
 			var signup = $.ajax({
 				type: "POST",
@@ -27,10 +21,6 @@ $(function () {
 					WorkoutLog.setAuthHeader(data.sessionToken);
 					WorkoutLog.definition.fetchAll();
 					WorkoutLog.log.fetchAll();
-
-					// remove after test
-					console.log("Success");
-					console.log(data);
 				}
 
 				$("#signup-modal").modal("hide");
